@@ -1,0 +1,29 @@
+name: Depth Field Particles
+description: Depth camera data drives a particle field visualization
+sensors:
+  - type: depth
+    width: 40
+    height: 20
+    noise: 0.05
+    update_rate: 30
+mappings:
+  - source: depth.avg_depth
+    target: visual.particle_density
+    transform: linear
+    min_out: 0.0
+    max_out: 1.0
+  - source: depth.presence
+    target: visual.brightness
+    transform: threshold
+    min_out: 0.0
+    max_out: 1.0
+  - source: depth.motion_energy
+    target: audio.volume
+    transform: exponential
+    min_out: 0.0
+    max_out: 0.8
+outputs:
+  - type: visual
+  - type: audio
+renderer: terminal
+tick_rate: 15
