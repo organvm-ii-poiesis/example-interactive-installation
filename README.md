@@ -431,7 +431,7 @@ This repository demonstrates expertise in: real-time systems engineering, sensor
 | [metasystem-master](https://github.com/organvm-ii-poiesis/metasystem-master) | II | Performance SDK provides parameter bus and consensus engine |
 | [learning-resources](https://github.com/organvm-ii-poiesis/learning-resources) | II | Tier 3 capstone uses this as reference implementation |
 | [example-ai-collaboration](https://github.com/organvm-ii-poiesis/example-ai-collaboration) | II | AI-driven generative modes for autonomous drift failsafe |
-| [recursive-engine](https://github.com/organvm-i-theoria/recursive-engine) | I | Recursive generative algorithms used in visual output |
+| [recursive-engine](https://github.com/organvm-i-theoria/recursive-engine--generative-entity) | I | Recursive generative algorithms used in visual output |
 | [agentic-titan](https://github.com/organvm-iv-taxis/agentic-titan) | IV | Orchestration patterns for multi-sensor coordination |
 
 ---
