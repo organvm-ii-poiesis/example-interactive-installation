@@ -1,0 +1,32 @@
+name: Motion Trace
+description: Motion tracking creates trailing visualizations
+sensors:
+  - type: motion
+    noise: 0.1
+    update_rate: 30
+mappings:
+  - source: motion.dx
+    target: visual.trace_x
+    transform: linear
+    min_out: -1.0
+    max_out: 1.0
+  - source: motion.dy
+    target: visual.trace_y
+    transform: linear
+    min_out: -1.0
+    max_out: 1.0
+  - source: motion.magnitude
+    target: visual.trace_brightness
+    transform: exponential
+    min_out: 0.1
+    max_out: 1.0
+  - source: motion.magnitude
+    target: audio.pitch
+    transform: linear
+    min_out: 200.0
+    max_out: 2000.0
+outputs:
+  - type: visual
+  - type: audio
+renderer: terminal
+tick_rate: 20
