@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "example-interactive-installation"
+version = "0.1.0"
+description = "Sensor-driven interactive installation framework"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
