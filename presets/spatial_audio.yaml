@@ -1,0 +1,33 @@
+name: Spatial Audio Field
+description: LIDAR point cloud drives spatial audio positioning
+sensors:
+  - type: lidar
+    num_points: 100
+    noise: 0.02
+    update_rate: 15
+mappings:
+  - source: lidar.nearest_distance
+    target: audio.volume
+    transform: invert
+    min_out: 0.0
+    max_out: 1.0
+  - source: lidar.centroid_x
+    target: spatial.pan
+    transform: linear
+    min_out: -1.0
+    max_out: 1.0
+  - source: lidar.centroid_z
+    target: spatial.depth
+    transform: linear
+    min_out: 0.0
+    max_out: 1.0
+  - source: lidar.point_density
+    target: audio.complexity
+    transform: linear
+    min_out: 0.0
+    max_out: 1.0
+outputs:
+  - type: audio
+  - type: spatial
+renderer: json_stream
+tick_rate: 15
