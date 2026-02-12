@@ -167,6 +167,8 @@ class InstallationEngine:
         self.frame_count += 1
         if self.renderer is not None:
             self.renderer.render(frame_data)
+        for cb in self._frame_callbacks:
+            cb(frame_data)
         return frame_data
 
     # -- internals --------------------------------------------------------
