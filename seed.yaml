@@ -1,0 +1,40 @@
+# seed.yaml — Automation Contract for organvm-ii-poiesis/example-interactive-installation
+# Schema: seed/v1.0
+# Generated: 2026-02-12 (AUTONOMY Sprint)
+# Category: flagship_with_deps
+
+schema_version: "1.0"
+organ: II
+organ_name: Art
+repo: example-interactive-installation
+org: organvm-ii-poiesis
+
+metadata:
+  implementation_status: PRODUCTION
+  tier: standard
+  promotion_status: LOCAL
+  last_validated: "2026-02-11"
+  generated: "2026-02-12"
+  sprint: "AUTONOMY"
+
+agents:
+  - name: ci
+    trigger: on_push
+    workflow: .github/workflows/ci-python.yml
+    description: "Continuous integration pipeline"
+
+consumes:
+  - type: dependency
+    source: organvm-ii-poiesis/metasystem-master
+    description: Depends on organvm-ii-poiesis/metasystem-master
+
+subscriptions:
+  - event: governance.updated
+    source: ORGAN-IV
+    action: Check compliance with updated governance rules
+  - event: health-audit.completed
+    source: ORGAN-IV
+    action: Review audit findings for this repo
+  - event: theory.published
+    source: ORGAN-I
+    action: Check for art derivative opportunities
